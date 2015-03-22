@@ -197,22 +197,11 @@ assert_memberFacts([H|T], X) :-
 	assert(Clause),
 	assert_memberFacts(T,X).
 
-
-who(X, L) :-
-	findall(Z, membr_of(paul, X, Z)  , L).
-%	findall(X,member_of([sdY4,hdComp],X), L).
-	%findall(X, (member_of(tto(Teacher, L),X), L).
+%find all memberof(memberof)) of the group a lecturer teaches to
+who(Teacher, X, L) :-
+	findall(Z, membr_of(Teacher, X, Z)  , L).
 
 membr_of(T, X , Z ):-
 	teaches(T,_, X),
 	member_of(X , Y ),
 	member_of(Y , Z ).
-
-
-
-membeer_of(X , Z ):-
-	member_of(X , Y ),
-	member_of(Y , Z ).
-
-tto(Teacher,L) :-
-	findall(X, (teaches(Teacher,_,X) ), L).

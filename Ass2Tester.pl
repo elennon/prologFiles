@@ -108,8 +108,6 @@ assertTeachers(L) :-
 	teacherList(L),
 	lpt('I0000',L,_).
 
-
-
 %add a list of students from X to Y into subGroup Z
 
 get_student_id(N) :-
